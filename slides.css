@@ -1,0 +1,82 @@
+.center {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.top {
+  justify-content: start;
+}
+
+.intro {
+  margin-top: 0;
+}
+
+.code-concept-intro {
+  font-size: 3rem;
+  padding: 2rem 4rem;
+}
+
+.fade-in-on-hover {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition-duration: 0.5s;
+}
+
+.fade-in-on-hover:hover,
+.fade-in-on-hover:focus  {
+  border-radius: 10px;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.browser-support {
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem;
+  list-style: none;
+  margin-top: 0;
+  padding: 1rem;
+}
+
+.browser-support:focus-visible {
+  outline: 4px solid var(--pink-bg);
+  border-radius: 10px;
+}
+
+.browser-support img {
+  max-width: 150px;
+}
+
+.browser-support p {
+  margin: 0;
+}
+
+.snippet {
+  background: var(--lavender-bg);
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: left;
+}
+
+.myFigure img {
+  width: 200px;
+}
+
+.display {
+  display: block;
+  font-family: 'IBM Plex Mono', monospace;
+  background: var(--lavender-bg);
+  padding: 2rem;
+  border-radius: 1rem;
+  font-size: 1.8rem;
+  text-align: left;
+  width: 1200px;
+}
+
+#clamp-1 label {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}

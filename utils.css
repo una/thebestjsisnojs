@@ -1,0 +1,56 @@
+.capitalize {
+  text-transform: uppercase;
+}
+
+.fun-font {
+  font-family: 'DynaPuff';
+  font-weight: 400;
+}
+
+.red {
+  color: var(--red);
+}
+
+.pink-bg {
+  background-color: var(--pink-bg);
+}
+
+.lavender-bg {
+  background-color: var(--lavender-bg);
+}
+
+.blue-bg {
+  background-color: var(--blue-bg);
+}
+
+.two-by {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.three-by {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.four-by {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+   }
+
+   80% {
+    transform: scale(1.1);
+   }
+
+   100% {
+   transform: scale(1);
+   }
+}
