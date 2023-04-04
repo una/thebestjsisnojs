@@ -14,19 +14,28 @@
             <div class="slides">
                 <div id="intro-1" class="slide center">
                     <h1 class="capitalize">/* The Best JavaScript is No JavaScript */</h1>
-                    <p class="intro fun-font">Una Kravets <span class="red">&hearts;</span> @una <br> Google Chrome DevRel</p>
+                    <p class="intro fun-font">Una Kravets <span class="red">&hearts;</span> una.im <br> Google Chrome DevRel</p>
                 </div>
-                <div id="intro-2" class="slide">
-                    <ul>
-                        <li>Quantity queries</li>
-                        <li>Page transitions</li>
-                        <li>Scroll-linked animations</li>
-                        <li>Container queries</li>
-                        <li>New components</li>
+                <div id="intro-2" class="slide center">
+                  <label class="list-play-checkbox">
+                    <input type="checkbox" name="list-play" />
+                  </label>
+                    <ul class="star-list" style="text-align: left;">
+                        <li>Logical Layout</li>
+                          <li class="indented">CSS Functions (<code>minmax()</code>, <code>clamp()</code>)</li>
+                          <li class="indented">Container queries (<code>@container</code>)</li>
+                          <li class="indented">Advanced selectors (<code>:has()</code>, <code>:not()</code>)</li>
+                        <li>CSS-Driven Interactions</li>
+                          <li class="indented">View transitions</li>
+                          <li class="indented">Scroll-driven animations</li>
+                          <li class="indented">New components</li>
+                        <li>Native Architecture</li>
+                        <li class="indented">Typed CSS (<code>@property</code>)</li>
                     </ul>
                 </div>
-                <div id="intro-3" class="slide">
-                    <h2>Dive into the world of modern, logical CSS</h2>
+                <div id="intro-3" class="slide dive-in fun-font">
+                    <h2 >Dive into the world of modern, logical CSS</h2>
+                    -- image of me with thumbs up --
                     <h3>with me, Una Kravets</h3>
                 </div>
                 <div id="clamp-1" class="slide top center code-concept-intro">
@@ -60,31 +69,81 @@
                     </label>
                     <img src="img/qrcode_codepen-clamp.png" alt="" class="codepen-link-qr">
                   </div>
-                  <div style="resize: both;
+                  <div id="clamp-3" style="resize: both;
                   overflow: auto; width: 900px; height: 600px; border: 2px solid">
                     <iframe src="https://cdpn.io/pen/debug/bGpoGdJ" frameborder="0"></iframe>
                   </div>
                 </div>
-                <div id="clamp-3" class="slide center">
+                <div id="clamp-4" class="slide top center">
+                  <h2><code>:clamp()</code> responsive typography</h2>
+                    <style class="display" contenteditable>.fluid {
+                      font-size: clamp(5rem, 5vw, 8rem);
+                    }</style>
+                      <h2 class="fluid">I am fluid typography</h2>
+                </div>
+                <div id="clamp-5" class="slide center">
+                  <div style="resize: both;
+                  overflow: auto; width: 1200px; height: 700px; border: 2px solid">
+                    <iframe style="height: 98%" src="https://una.im/color-mix-opacity" frameborder="0"></iframe> 
+                  </div>
+                </div>
+                <!-- <div id="clamp-5" class="slide center">
                   <iframe src="http://fittextjs.com/" frameborder="0"></iframe>
-                </div>
-                <div id="clamp-3" class="slide center">
-                  <iframe src="https://github.com/davatron5000/FitText.js" frameborder="0"></iframe>
-                </div>
-                <div id="clamp-3" class="slide">
-                  Responsive typography
+                </div> -->
+                <div id="clamp-6" class="slide top center">
+                  <h2>Container query units</h2>
+                  <style class="display multiline text-smaller" style="margin-bottom: 2rem" contenteditable>.fluid-cq-container {
+  container-type: inline-size;
+  border: 1px solid;
+}
+
+.fluid-cq {
+  font-size: clamp(3rem, 8cqi, 5rem);
+}</style>
+                  <div class="fluid-cq-container resize">
+                    <h2 class="fluid-cq">I am fluid typography</h2>
+                  </div>
                 </div>
                 <div id="cq-1" class="slide">
-                  Container query sizes, doing this within a container
+                  <a class="link-only" href="#cq-1" accesskey=2></a>
+                  <img src="img/cq-1.png" alt="">
                 </div>
-                <div id="cq-2" class="slide">
-                  what is a CQ image
+                <div id="cq-2" class="slide center">
+                  <div class="codepen-link-container">
+                    <label class="codepen-link-checkbox">
+                      <input type="checkbox" name="codepen-link" />
+                    </label>
+                    <img src="img/qr-container.png" alt="" class="codepen-link-qr">
+                  </div>
+                  <div  style="resize: both;
+                  overflow: auto; width: 900px; height: 600px; border: 2px solid">
+                    <iframe src="https://cdpn.io/pen/debug/WNgmxom" frameborder="0"></iframe>
+                  </div>
                 </div>
-                <div id="cq-3">
+                <div id="cq-3" class="slide">
                   More with CQ, no more needing to resize observe for size, custom props
                 </div>
+                <div id="cq-4" class="slide">
+                  <img src="img/sq-1.png" alt="">
+                </div>
+                <div id="cq-5" class="slide center">
+                    <div class="codepen-link-container">
+                      <label class="codepen-link-checkbox">
+                        <input type="checkbox" name="codepen-link" />
+                      </label>
+                      <img src="img/qr-sq.png" alt="" class="codepen-link-qr">
+                    </div>
+                    <code style="margin-bottom: 2rem">@container style(--sunny: true) { .card { ... } }</code>
+                    
+                    <code style="margin-bottom: 2rem">@container style(--sunny: true) and style(--cloudy: true) { .card { ... } }</code>
+
+                    <div  style="resize: both;
+                    overflow: auto; width: 900px; height: 300px; border: 2px solid">
+                      <iframe src="https://codepen.io/web-dot-dev/debug/KKxzYQx" frameborder="0"></iframe>
+                    </div>
+                </div>
                 <div id="has-1" class="slide center top code-concept-intro">
-                    <a class="link-only" href="#has-1" accesskey=2></a>
+                    <a class="link-only" href="#has-1" accesskey=3></a>
                     <h2><code>:has()</code> relational selector</h2>
                     <p class="brief">Style parent elements (and more) based on the presence or state of child elements</p>
                     <ul class="fade-in-on-hover browser-support" tabindex="0">
@@ -126,9 +185,33 @@
                 <div id="has-3" class="slide center top">
                     <h2>Quantity Queries</h2>
                     <p>Style based on the number of children</p>
+                    <code>:has(:nth-child(n + x))</code>
+                </div>
+                <div id="cq-2" class="slide center">
+                  <div class="codepen-link-container">
+                    <label class="codepen-link-checkbox">
+                      <input type="checkbox" name="codepen-link" />
+                    </label>
+                    <img src="img/qr-has-nth.png" alt="" class="codepen-link-qr">
+                  </div>
+                  <div  style="resize: both;
+                  overflow: auto; width: 900px; height: 700px; border: 2px solid">
+                    <iframe src="https://cdpn.io/pen/debug/BaOXaxd" frameborder="0"></iframe>
+                  </div>
+                  <!-- note: add another div -->
+                </div>
+                <div class="slide">
+                  <h2>More CSS math functions</h2>
+                  <p>Trig functions</p>
                 </div>
                 <div id="slide-x" class="slide center">
-                    <blockquote class="capitalize">The best way to level up your developer skillset is to learn <br>CSS well.</blockquote>
+                    <blockquote class="capitalize">The best way to level up your developer skillset is to learn and utilize CSS and HTML</blockquote>
+                </div>
+                <div class="slide">
+                  <h2>Works in every framework</h2>
+                </div>
+                <div class="slide">
+                  <h2>The entire presentation is CSS and HTML-only</h2>
                 </div>
             </div>
         </div>

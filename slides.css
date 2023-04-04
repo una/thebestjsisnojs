@@ -75,8 +75,112 @@
   width: 1200px;
 }
 
+.multiline {
+  white-space: pre-wrap;
+}
+
 #clamp-1 label {
   position: absolute;
   top: 1rem;
   left: 1rem;
+}
+
+.fluid-cq-container {
+  width: 100%;
+}
+
+.type-checkbox {
+  margin-top: 2rem;
+}
+
+img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.dive-in {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* Star List Animation */
+.star-list li::marker {
+  content: '⭐️ ';
+  display: block;
+  margin: 0 1rem 0 0;
+}
+
+.star-list {
+  line-height: 1.5;
+  font-size: 3rem;
+}
+
+.star-list li {
+  opacity: 0;
+}
+
+.list-play-checkbox:has(:checked) + .star-list li{
+  animation: fade-in 0.3s ease-in forwards var(--delay);
+}
+
+.list-play-checkbox {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.star-list li:nth-child(n + 1) {
+  --delay: 0s;
+}
+
+.star-list li:nth-child(n + 2) {
+  --delay: 1s;
+}
+
+.star-list li:nth-child(n + 3) {
+  --delay: 2s;
+}
+
+.star-list li:nth-child(n + 4) {
+  --delay: 3s;
+}
+
+.star-list li:nth-child(n + 5) {
+  --delay: 4s;
+}
+
+.star-list li:nth-child(n + 6) {
+  --delay: 5s;
+}
+
+.star-list li:nth-child(n + 7) {
+  --delay: 6s;
+}
+
+.star-list li:nth-child(n + 8) {
+  --delay: 7s;
+}
+
+.star-list li:nth-child(n + 9) {
+  --delay: 8s;
+}
+
+.star-list li:nth-child(n + 10) {
+  --delay: 9s;
+}
+
+.star-list li:nth-child(n + 11) {
+  --delay: 10s;
+}
+
+.star-list li:nth-child(n + 12) {
+  --delay: 11s;
+}
+
+.star-list li:nth-child(n + 13) {
+  --delay: 12s;
+}
+
+.star-list li:nth-child(n + 14) {
+  --delay: 13s;
 }

@@ -41,6 +41,10 @@
   gap: 2rem;
 }
 
+.text-smaller {
+  font-size: 75%
+}
+
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -53,4 +57,18 @@
    100% {
    transform: scale(1);
    }
+}
+
+.resize {
+  resize: both;
+  overflow: auto;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
