@@ -1,0 +1,28 @@
+.responsive-grid .box {
+  font-size: 2rem;
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+  border-radius: 1rem;
+}
+
+.responsive-grid {
+  border: 4px dashed var(--blue);
+  padding: 1rem;
+}
+
+.pink {
+  background: var(--pink-bg);
+}
+
+.blue {
+  background: var(--blue-bg);
+}
+
+.purple {
+  background: var(--lavender-bg);
+}
+
+.green {
+  background: var(--green-bg);
+}

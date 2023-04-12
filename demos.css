@@ -1,8 +1,0 @@
-.responsive-grid .box {
-  font-size: 2rem;
-  padding: 1rem;
-  display: grid;
-  place-items: center;
-  border-radius: 1rem;
-  border-style: dashed;
-}

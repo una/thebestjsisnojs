@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Best JavaScript is No JavaScript | @una</title>
-    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="styles/main.css" />
 </head>
 <body>
     <div class="title fun-font">/* The Best JavaScript is No JavaScript */</div>
@@ -22,12 +22,11 @@
                   </label>
                     <ul class="star-list" style="text-align: left;">
                         <li>Logical Components</li>
-                          <li class="indented">CSS Functions (<code>minmax()</code>, <code>clamp()</code>)</li>
-                          <li class="indented">Container queries (<code>@container</code>)</li>
+                          <li class="indented">CSS Math Functions (<code>minmax()</code>, <code>clamp()</code>, CSS trigonometry)</li>
+                          <li class="indented">Container queries (<code>@container</code>, <code>style()</code>)</li>
                           <li class="indented">Advanced selectors (<code>:has()</code>, <code>:not()</code>)</li>
                         <li>CSS-Driven Interactions</li>
-                          <li class="indented">View transitions</li>
-                          <li class="indented">Scroll-driven animations</li>
+                          <li class="indented">Scroll-driven animations (<code>view-timeline</code>)</li>
                           <li class="indented">New components (<code>popover</code>, <code>anchor</code>)</li>
                         <li>Native Architecture</li>
                         <li class="indented">Typed CSS (<code>@property</code>)</li>
@@ -63,8 +62,7 @@
                 </div>
                 <div class="slide center">
                   <style class="display" contenteditable style="white-space: pre-wrap; position: absolute;
-                  top: 4rem;
-              ">.responsive-grid {
+                  top: 4rem;">.responsive-grid {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(4, 1fr);
@@ -435,7 +433,7 @@
                     <ul class="fade-in-on-hover browser-support" tabindex="0">
                       <li>
                           <img src="img/chromium_256x256.png" alt="Chromium">
-                          <p>Aug 2024</p>
+                          <p>Aug 2020</p>
                       </li>
                       <li>
                         <img src="img/webkit_256x256.png" alt="Webkit">
@@ -453,7 +451,7 @@
                   <code>
                     <pre style="width: 700px;">CSS.registerProperty({
   name: '--colorPrimary',
-  syntax: '<color>',
+  syntax: '&lt;color&gt;',
   initialValue: 'magenta',
   inherits: false
 });</pre>
@@ -481,28 +479,92 @@
 
                 <div class="slide center">
                   <div class="two-by">
-                    <code><pre>
+                    <code style="font-size: 1.5rem"><pre>
 @property --gradPoint {
   syntax: '<percentage>';
   inherits: false;
   initial-value: 40%;
 }
-</pre></code>
-                  <iframe style="height: 370px" src="https://codepen.io/una/debug/WNavaNX/7fb5dc84799f15077b562a18f6a944db" frameborder="0"></iframe>
+
+.post {
+  background: 
+    linear-gradient(var(--color1) var(--gradPoint), 
+                    var(--color2) calc(var(--gradPoint) + 20%));
+  transition: --gradPoint 0.5s, filter 0.8s;
+}
+
+.post:hover, .post:focus {
+  --gradPoint: 100%;
+}</pre></code>
+                  <iframe src="https://codepen.io/una/debug/WNavaNX/7fb5dc84799f15077b562a18f6a944db" frameborder="0"></iframe>
                   </div>
                 </div>
 
-                <div class="slide">
+                <div id="cq-1" class="slide top center code-concept-intro">
                   <a class="link-only" href="#scroll-animations" accesskey=9></a>
-                  <p>Scroll-driven Animations</p>
+                    
+                    <h2>Scroll-driven animations</h2>
+                    <ul class="two-by">
+                        <li><code class="pink-bg">view-timeline</code></li>
+                        <li><code class="lavender-bg">animation-timeline</code></li>
+                    </ul>
+                    <ul class="fade-in-on-hover browser-support" tabindex="0">
+                      <li>
+                          <img src="img/chromium_256x256.png" alt="Chromium">
+                          <p>Soon ⚠️</p>
+                      </li>
+                      <li>
+                        <img src="img/webkit_256x256.png" alt="Webkit">
+                        <p>❌</p>
+                      </li>
+                      <li>
+                          <img src="img/firefox_256x256.png" alt="Firefox">
+                          <p>❌</p>
+                      </li>
+                  </ul>
                 </div>
 
                 <div class="slide">
                   <iframe src="https://codepen.io/una/debug/BaqNqzd" frameborder="0"></iframe>
                 </div>
+
+                <div class="slide center">
+                  <a class="link-only" href="#this-prezo" accesskey="-"></a>
+                  <h2>This presentation is all CSS & HTML*</h2>
+                  <p>*with some iframes for demos</p>
+                </div>
+
+                <div class="slide at-top">
+                  <h2 style="font-size: 2.5rem"><code>&lt;style&gt;</code> with <code>display:block</code> and <code>contenteditable</code></h2>
+                  <style class="display" style="font-size: 1.5rem; white-space: pre-wrap;" contenteditable>body {
+  background: linear-gradient(45deg, var(--tomato), var(--pink), var(--blue));
+}</style>
+                </div>
+
+                <div class="slide at-top">
+                  <h2 style="font-size: 2.5rem">Smooth scroll with <code>scroll-snap</code></h2>
+                  <style class="display" style="white-space: pre-wrap;" contenteditable>.slides {
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}</style>
+                </div>
+
+                <div class="slide at-top">
+                  <h2 style="font-size: 2.5rem">Navigation with HTML <code>accesskey</code></h2>
+                  <ul style="text-align: left; gap: 1rem; display: grid;">
+                    <li><kbd>ctrl</kbd> + <kbd>opt</kbd> + <kbd>1</kbd> = Intro</li>
+                    <li><kbd>ctrl</kbd> + <kbd>opt</kbd> + <kbd>2</kbd> = Grid functions</li>
+                    <li><kbd>ctrl</kbd> + <kbd>opt</kbd> + <kbd>3</kbd> = Math functions</li>
+                    <li><kbd>ctrl</kbd> + <kbd>opt</kbd> + <kbd>4</kbd> = Trigonometric functions</li>
+                    <li><kbd>ctrl</kbd> + <kbd>opt</kbd> + <kbd>5</kbd> = Popover & Anchor</li>
+                    <li><kbd>ctrl</kbd> + <kbd>opt</kbd> + <kbd>6</kbd> = :has()</li>
+                    <li><kbd>ctrl</kbd> + <kbd>opt</kbd> + <kbd>7</kbd> = Container queries</li>
+                    <li>...</li>
+                  </ul>
+                </div>
                 
                 <div class="slide center">
-                  <a class="link-only" href="#conclusion" accesskey="-"></a>
+                  <a class="link-only" href="#conclusion" accesskey="="></a>
                   <blockquote>Works in every framework</blockquote>
                 </div>
                 <div class="slide center">

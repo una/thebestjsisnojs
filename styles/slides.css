@@ -193,3 +193,9 @@ figure {
 .figcaption-demo {
   font-size: 24px;
 }
+
+.at-top {
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+}
