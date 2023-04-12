@@ -64,6 +64,11 @@
   overflow: auto;
 }
 
+.resize-x {
+  resize: horizontal;
+  overflow: auto;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;

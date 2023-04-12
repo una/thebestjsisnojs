@@ -61,7 +61,7 @@
 }
 
 .myFigure img {
-  width: 200px;
+  width: 150px;
 }
 
 .display {
@@ -95,7 +95,12 @@
 
 img {
   width: 100%;
+  height: 100%;
   object-fit: contain;
+}
+
+figure {
+  max-height: 710px;
 }
 
 .dive-in {
@@ -183,4 +188,8 @@ img {
 
 .star-list li:nth-child(n + 14) {
   --delay: 13s;
+}
+
+.figcaption-demo {
+  font-size: 24px;
 }

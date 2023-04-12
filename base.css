@@ -20,6 +20,11 @@ body {
   font-size: 36px;
 }
 
+pre {
+  text-align: left;
+  padding: 0 1rem;
+}
+
 h1,
 blockquote {
   font-family: 'DynaPuff';
@@ -89,7 +94,7 @@ label:has([type=checkbox]:checked) {
 
 iframe {
   width: 100%;
-  height: 95%;
+  height: 100%;
 }
 
 li.indented {

@@ -5,5 +5,6 @@
 @import 'base.css' layer(base);
 @import 'utils.css' layer(utils);
 @import 'slider-ui.css' layer(slider);
+@import 'demos.css' layer(demos);
 @import 'components.css' layer(slides);
 @import 'slides.css' layer(slides);
