@@ -199,3 +199,23 @@ figure {
   align-items: center;
   padding-top: 2rem;
 }
+
+.end-links {
+  font-family: 'DynaPuff';
+  text-align: left;
+}
+
+/* .end-links li {
+  display: grid;
+  grid-template-columns: 10ch 1fr ;
+} */
+
+.end-links span {
+  color: var(--blue);
+  text-decoration: underline;
+  margin-left: 1rem;
+}
+
+.end-links .indent {
+  margin-left: 9.5rem;
+}
