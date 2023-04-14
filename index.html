@@ -221,13 +221,104 @@
                 <!-- 04. Popover & Anchor -->
 
                 <div class="slide center">
-                  <a class="link-only" href="#popover" accesskey=4></a>
-                  <h2>Popover (no-JS accessible component)</h2>
+                  <iframe style="height: 80%" src="https://codepen.io/scottohara/debug/ZEMPwWR" frameborder="0"></iframe>
+                  <p style="padding: 0">Popover version by Scott O'Hara</p>
                 </div>
 
+                <div id="popover-intro" class="slide center top code-concept-intro">
+                  <a class="link-only" href="#popover" accesskey=4></a>
+                  <h2><code>popover</code> attribute</h2>
+                  <p class="brief">Built-in accessibility, keyboard behavior, and focus management</p>
+                  <ul class="fade-in-on-hover browser-support" tabindex="0">
+                    <li>
+                      <img src="img/chromium_256x256.png" alt="Chromium">
+                      <p>Soon ⚠️</p>
+                    </li>
+                    <li>
+                      <img src="img/webkit_256x256.png" alt="Webkit">
+                      <p>❌</p>
+                    </li>
+                    <li>
+                      <img src="img/firefox_256x256.png" alt="Firefox">
+                      <p>❌</p>
+                    </li>
+                </ul>
+              </div>
+
+              <div class="slide center">
+                <h2>HTML</h2>
+                <code>
+                  <pre>&lt;!-- Button -->
+&lt;button popovertarget="profile-settings-popover">
+Open Me
+&lt;/button>
+
+&lt;!-- Popover -->
+&lt;div id="profile-settings-popover" popover>
+Popover Stuff
+&lt;/div></pre>
+                </code>
+              </div>                
+
                 <div class="slide">
-                  Anchor positioning
+                  <iframe src="https://codepen.io/una/pen/jOeWzLd" frameborder="1"></iframe>
                 </div>
+
+                <div id="popover-intro" class="slide center top code-concept-intro">
+                  <h2><code>anchor</code> positioning</h2>
+                  <ul class="three-by" style="font-size: 40px">
+                    <li><code class="pink-bg">anchor=""</code></li>
+                    <li><code class="lavender-bg">anchor()</code></li>
+                    <li><code class="blue-bg">@try {}</code></li>
+                </ul>
+                  <ul class="fade-in-on-hover browser-support" tabindex="0">
+                    <li>
+                      <img src="img/chromium_256x256.png" alt="Chromium">
+                      <p>Soon  ⚠️</p>
+                    </li>
+                    <li>
+                      <img src="img/webkit_256x256.png" alt="Webkit">
+                      <p>❌</p>
+                    </li>
+                    <li>
+                      <img src="img/firefox_256x256.png" alt="Firefox">
+                      <p>❌</p>
+                    </li>
+                </ul>
+              </div>
+
+              <div class="slide">
+                <iframe src="https://codepen.io/una/pen/vYVLVVG" frameborder="1"></iframe>
+              </div>
+
+              <div class="slide center">
+                <h2>HTML</h2>
+                <code>
+                  <pre>&lt;!-- Add an id -->
+&lt;button popovertarget="profile-settings-popover"
+        id="profile-settings-btn">
+        Open Me
+&lt;/button>
+
+&lt;!-- Add an anchor -->
+&lt;div popover id="profile-settings-popover"
+       anchor="profile-settings-btn">
+        Popover Stuff
+&lt;/div></pre>
+                </code>
+              </div> 
+
+              <div class="slide center">
+                <h2>CSS</h2>
+                <code>
+                  <pre>#profile-settings-popover {
+  bottom: calc(anchor(top) + 1rem);
+  left: calc(anchor(right) - var(--popover-width));
+}</pre>
+                </code>
+              </div>
+
+
 
                 <!-- 05. Style Queries -->
 
@@ -504,9 +595,10 @@
                   <a class="link-only" href="#scroll-animations" accesskey=9></a>
                     
                     <h2>Scroll-driven animations</h2>
-                    <ul class="two-by">
+                    <ul class="three-by">
                         <li><code class="pink-bg">view-timeline</code></li>
                         <li><code class="lavender-bg">animation-timeline</code></li>
+                        <li><code class="blue-bg">view()</code></li>
                     </ul>
                     <ul class="fade-in-on-hover browser-support" tabindex="0">
                       <li>
