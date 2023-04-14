@@ -313,12 +313,62 @@ Popover Stuff
                 <code>
                   <pre>#profile-settings-popover {
   bottom: calc(anchor(top) + 1rem);
-  left: calc(anchor(right) - var(--popover-width));
+  right: calc(anchor(right));
 }</pre>
                 </code>
               </div>
 
+              <div class="slide">
+                <iframe src="https://codepen.io/una/pen/vYVLVVG" frameborder="1"></iframe>
+              </div>
+              
+              <div class="slide">
+                <div class="two-by">
+<style style="font-size: 1.25rem; white-space: pre-wrap; width: 100%; margin: 2rem 0;" contenteditable class="display">
+  :root {
+    --spacer: 0.5rem;
+  }
+  
+  @position-fallback --top-then-bottom {
+    @try {
+      bottom: calc(anchor(top) + var(--spacer));
+      left: anchor(center);
+    }
+  
+    @try {
+      top: calc(anchor(bottom) + var(--spacer));
+      left: anchor(center);
+    }
+  }
+  
+  #my-tooltip {
+    position-fallback: --top-then-bottom;
+    translate: -50% 0;
+  }</style>
+                <div class="demo">
+                  <div class="resize tooltip-demo">
+                    <button id="question-mark" popovertarget="my-tooltip">
+                      <p>?</p>
+                    </button>
+                    
+                    <div id="my-tooltip" class="tooltip" anchor="question-mark" popover>
+                      <p>I am a popover tooltip with more information. I am a popover tooltip with more information. I am a popover tooltip with more information. I am a popover tooltip with more information.<p>
+                    </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
 
+              <div class="slide">
+                  <div class="resize tooltip-demo">
+                    <button id="question-mark-2">
+                      <p>?</p>
+                    </button>
+                    <div class="tooltip non-popover" anchor="question-mark-2">
+                      <p>I am a non-popover anchored tooltip with more information. I am a non-popover anchored tooltip with more information. I am a non-popover anchored tooltip with more information. I am a non-popover anchored tooltip with more information.<p>
+                    </div>
+                </div>
+              </div>
 
                 <!-- 05. Style Queries -->
 

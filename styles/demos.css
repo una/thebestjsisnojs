@@ -26,3 +26,48 @@
 .green {
   background: var(--green-bg);
 }
+
+.tooltip-demo {
+  border: 1px solid;
+}
+
+.tooltip-demo button {
+  background: #ddd;
+  font-size: 1.2rem;
+  font-weight: 800;
+  font-family: monospace;
+  border-radius: 1.75rem;
+  height: 1.75rem;
+  width: 1.75rem;
+  display: grid;
+  place-content: center;
+  border: 2px solid black;
+}
+
+.tooltip-demo .tooltip {
+  font-family: system-ui, sans-serif;
+  font-size: 1rem;
+  background: #333;
+  color: white;
+  font-weight: 400;
+  padding: 1rem;
+  width: 300px;
+  line-height: 1.5;
+}
+
+.tooltip-demo {
+  display: grid;
+  grid-template-rows: 90% 1fr;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  height: 90%;
+  margin: 2rem auto;
+  position: relative;
+}
+
+.non-popover {
+  position: absolute;
+  position-fallback: --top-then-bottom;
+  translate: -50% 0;
+}
