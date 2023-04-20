@@ -151,43 +151,31 @@ figure {
 }
 
 .star-list li:nth-child(n + 5) {
-  --delay: 4s;
-}
-
-.star-list li:nth-child(n + 6) {
-  --delay: 5s;
-}
-
-.star-list li:nth-child(n + 7) {
-  --delay: 6s;
-}
-
-.star-list li:nth-child(n + 8) {
-  --delay: 7s;
-}
-
-.star-list li:nth-child(n + 9) {
-  --delay: 8s;
-}
-
-.star-list li:nth-child(n + 10) {
   --delay: 9s;
 }
 
-.star-list li:nth-child(n + 11) {
+.star-list li:nth-child(n + 6) {
   --delay: 10s;
 }
 
-.star-list li:nth-child(n + 12) {
+.star-list li:nth-child(n + 7) {
   --delay: 11s;
 }
 
-.star-list li:nth-child(n + 13) {
-  --delay: 12s;
+.star-list li:nth-child(n + 8) {
+  --delay: 17s;
 }
 
-.star-list li:nth-child(n + 14) {
-  --delay: 13s;
+.star-list li:nth-child(n + 9) {
+  --delay: 18s;
+}
+
+.star-list li:nth-child(n + 10) {
+  --delay: 19s;
+}
+
+.star-list li:nth-child(n + 11) {
+  --delay: 20s;
 }
 
 .figcaption-demo {
@@ -218,4 +206,11 @@ figure {
 
 .end-links .indent {
   margin-left: 9.5rem;
+}
+
+.last-qr {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 230px;
 }

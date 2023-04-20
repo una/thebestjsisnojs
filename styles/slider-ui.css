@@ -42,6 +42,10 @@
   height: 100%;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 .slider {
   width: var(--slide-width);
   aspect-ratio: var(--aspect-ratio);

@@ -13,6 +13,7 @@
         <div class="slider">
             <div class="slides">
                 <div id="intro-1" class="slide center">
+                    <a class="link-only" href="#grid-functions" accesskey='`'></a>
                     <h1 class="capitalize">/* The Best JavaScript is No JavaScript */</h1>
                     <p class="intro fun-font">Una Kravets <span class="red">&hearts;</span> una.im <br> Google Chrome DevRel</p>
                 </div>
@@ -32,11 +33,15 @@
                         <li class="indented">Typed CSS (<code>@property</code>)</li>
                     </ul>
                 </div>
-                <div id="intro-3" class="slide dive-in fun-font">
+
+                <div id="slide-x" class="slide center">
+                  <blockquote>Separate your application logic from your styling logic</blockquote>
+                </div>
+                <!-- <div id="intro-3" class="slide dive-in fun-font">
                     <h2 >Dive into the world of modern, logical CSS</h2>
                     -- image of me with thumbs up --
                     <h3>with me, Una Kravets</h3>
-                </div>
+                </div> -->
                 <div class="slide top center code-concept-intro">
                   <a class="link-only" href="#grid-functions" accesskey=1></a>
                   <h2>CSS Grid Functions</h2>
@@ -130,21 +135,6 @@
                     <iframe style="height: 98%" src="https://una.im/color-mix-opacity" frameborder="0"></iframe> 
                   </div>
                 </div>
-                
-                <div id="clamp-6" class="slide top center">
-                  <h2>Container query units</h2>
-                  <style class="display multiline text-smaller" style="margin-bottom: 2rem" contenteditable>.fluid-cq-container {
-  container-type: inline-size;
-  border: 1px solid;
-}
-
-.fluid-cq {
-  font-size: clamp(3rem, 8cqi, 5rem);
-}</style>
-                  <div class="fluid-cq-container resize">
-                    <h2 class="fluid-cq">I am fluid typography</h2>
-                  </div>
-                </div>
 
                 <div class="slide top center code-concept-intro">
                   <a class="link-only" href="#trig-functions" accesskey=3></a>
@@ -225,10 +215,11 @@
                   <p style="padding: 0">Popover version by Scott O'Hara</p>
                 </div>
 
+
                 <div id="popover-intro" class="slide center top code-concept-intro">
                   <a class="link-only" href="#popover" accesskey=4></a>
                   <h2><code>popover</code> attribute</h2>
-                  <p class="brief">Built-in accessibility, keyboard behavior, and focus management</p>
+                  <p class="brief">Built-in accessibility semantics, keyboard behavior, and focus management</p>
                   <ul class="fade-in-on-hover browser-support" tabindex="0">
                     <li>
                       <img src="img/chromium_256x256.png" alt="Chromium">
@@ -431,8 +422,43 @@ Popover Stuff
                     <p>Style based on the number of children</p>
                     <code>:has(:nth-child(n + x))</code>
                 </div>
+
+                <div class="slide center">
+                  <div class="two-by">
+                    <style class="display" style="font-size: 1.5rem; white-space: pre-wrap; width: 780px;" contenteditable>/* 5 or more items display next to each other */
+.qq-demo ul:has(:nth-child(n + 5)) li {
+  display: inline;
+}
+
+.qq-demo ul:has(:nth-child(n + 5)) {
+  background: yellow;
+}
+
+/* Adds semicolon after each item except last one */
+.qq-demo ul:has(:nth-child(n + 5)) 
+         li:not(:last-child)::after {
+  content: ';';
+}</style>
+                  <div class="qq-demo">
+                    <ul>
+                      <li>Hair: Harry Potter</li>
+                      <li>Makeup: Mark Zuckerberg</li>
+                      <li>Styling: Mary Poppins</li>
+                    </ul>
+                    
+                    <ul>
+                      <li>Hair: Harry Potter</li>
+                      <li>Makeup: Mark Zuckerberg</li>
+                      <li>Styling: Mary Poppins</li>
+                      <li>Accessories: Marie Claire</li>
+                      <li>Photographer: Beyonce</li>
+                      <li>Photography Assistance: Leonardo DiCaprio</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
                 
-                <div id="has-4" class="slide center">
+                <!-- <div id="has-4" class="slide center">
                   <div class="codepen-link-container">
                     <label class="codepen-link-checkbox">
                       <input type="checkbox" name="codepen-link" />
@@ -443,14 +469,13 @@ Popover Stuff
                   overflow: auto; width: 1200px; height: 700px; border: 2px solid">
                     <iframe src="https://cdpn.io/pen/debug/BaOXaxd" frameborder="0"></iframe>
                   </div>
-                  <!-- note: add another div -->
                 </div>
 
                 <div id="has-5" class="slide center">
                   <div style="width: 1200px; height: 700px;">
                     <iframe src="https://codepen.io/una/debug/xxyGajm/0e064058f3589f4c3bb6225aa1104a3d" frameborder="0"></iframe>
                   </div>
-                </div>
+                </div> -->
 
                 <!-- 06. Container Queries -->
 
@@ -461,7 +486,7 @@ Popover Stuff
                     <ul class="three-by" style="font-size: 40px">
                         <li><code class="pink-bg">container-type</code></li>
                         <li><code class="lavender-bg">container-name</code></li>
-                        <li><code class="blue-bg">@container()</code></li>
+                        <li><code class="blue-bg">@container</code></li>
                     </ul>
                     <ul class="fade-in-on-hover browser-support" tabindex="0">
                       <li>
@@ -507,6 +532,21 @@ Popover Stuff
                   <div  style="resize: both;
                   overflow: auto; width: 300px; height: 300px; border: 2px solid">
                     <iframe src="https://cdpn.io/pen/debug/WNEOjdB" frameborder="0"></iframe>
+                  </div>
+                </div>
+
+                <div id="clamp-6" class="slide top center">
+                  <h2>Container query units</h2>
+                  <style class="display multiline text-smaller" style="margin-bottom: 2rem" contenteditable>.fluid-cq-container {
+  container-type: inline-size;
+  border: 1px solid;
+}
+
+.fluid-cq {
+  font-size: clamp(3rem, 8cqi, 5rem);
+}</style>
+                  <div class="fluid-cq-container resize">
+                    <h2 class="fluid-cq">I am fluid typography</h2>
                   </div>
                 </div>
 
@@ -578,7 +618,7 @@ Popover Stuff
                       </li>
                       <li>
                         <img src="img/webkit_256x256.png" alt="Webkit">
-                        <p>TP 🏁</p>
+                        <p>Mar 2023</p>
                       </li>
                       <li>
                           <img src="img/firefox_256x256.png" alt="Firefox">
@@ -671,7 +711,32 @@ Popover Stuff
                 </div>
 
                 <div class="slide center">
-                  <a class="link-only" href="#this-prezo" accesskey="-"></a>
+                  <div class="two-by">
+<code style="font-size: 1.5rem"><pre>
+@keyframes fly-in {
+  0% {
+      opacity: 0;
+      transform: translateX(-100px);
+  }
+  50% {
+      opacity: 1;
+      transform: translateX(0px);
+  }
+}
+
+blockquote {
+  animation: fly-in auto linear;
+  animation-timeline: view();
+}
+</pre></code>
+                <div>
+                  <iframe src="https://codepen.io/una/debug/BaqNqzd" frameborder="0" style="border: 1px solid; padding: 1rem;"></iframe>
+                </div>
+              </div>
+                </div>
+
+                <div class="slide center">
+                  <a class="link-only" href="#this-prezo" accesskey="0"></a>
                     <blockquote>🤫 This presentation is fully built with vanilla CSS & HTML*</blockquote>
                   <p>*with some iframes for demos due to laziness</p>
                 </div>
@@ -706,24 +771,28 @@ Popover Stuff
                 </div>
 
                 <div class="slide center">
-                  <a class="link-only" href="#conclusion" accesskey="="></a>
+                  <a class="link-only" href="#conclusion" accesskey="-"></a>
                   <h2>Another cool thing...</h2>
                   <blockquote>CSS & HTML work in every framework</blockquote>
                 </div>
+
                 
               <div id="slide-x" class="slide center">
                   <blockquote>The best way to level up your developer skillset is to get good at CSS and HTML</blockquote>
               </div>
+
               <div id="slide-x" class="slide center">
                 <blockquote>Leverage the browser</blockquote>
             </div>
+
               <div id="slide-x" class="slide center">
                 <blockquote>Don't underestimate CSS and vanilla HTML components</blockquote>
               </div>
 
               <div id="slide-end" class="slide at-top">
-                <a class="link-only" href="#end" accesskey="/"></a>
+                <a class="link-only" href="#end" accesskey="="></a>
                 <h1>Thank you</h1>
+                <figure class="last-qr"><img src="img/collection_link.png" alt=""></figure>
                 <ul class="links end-links">
                   <li>Twitter: <span>@una</span></li>
                   <li>Website: <span>una.im</span></li>

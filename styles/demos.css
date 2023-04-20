@@ -29,6 +29,7 @@
 
 .tooltip-demo {
   border: 1px solid;
+  width: 500px;
 }
 
 .tooltip-demo button {
@@ -70,4 +71,17 @@
   position: absolute;
   position-fallback: --top-then-bottom;
   translate: -50% 0;
+}
+
+.qq-demo {
+  font-size: 1.2rem;
+}
+
+.qq-demo ul {
+  list-style: none;
+  border: 1px solid #9e8fdd;
+  background-color: #f0edff;
+  padding: 2rem;
+  width: 500px;
+  margin: 0 auto 4rem;
 }
