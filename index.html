@@ -17,6 +17,9 @@
                     <h1 class="capitalize">/* The Best JavaScript is No JavaScript */</h1>
                     <p class="intro fun-font">Una Kravets <span class="red">&hearts;</span> una.im <br> Google Chrome DevRel</p>
                 </div>
+                <div id="slide-x" class="slide center">
+                  <blockquote>Separate your application logic from your styling logic</blockquote>
+                </div>
                 <div id="intro-2" class="slide center">
                   <label class="list-play-checkbox">
                     <input type="checkbox" name="list-play" />
@@ -34,9 +37,7 @@
                     </ul>
                 </div>
 
-                <div id="slide-x" class="slide center">
-                  <blockquote>Separate your application logic from your styling logic</blockquote>
-                </div>
+                
                 <!-- <div id="intro-3" class="slide dive-in fun-font">
                     <h2 >Dive into the world of modern, logical CSS</h2>
                     -- image of me with thumbs up --
@@ -361,6 +362,36 @@ Popover Stuff
                 </div>
               </div>
 
+              <div class="slide">
+                <div class="two-by">
+                  <code style="font-size: 1.5rem; width: 750px;margin: 2rem 0;"><pre>&lt;!-- Selectmenu -->
+
+&lt;selectmenu>
+  &lt;button slot="button" behavior="button">
+    &lt;label>Select a color&lt;/label>
+    &lt;span slot="selected-value" 
+      behavior="selected-value" 
+      class="selected-val">&lt;/span>
+  &lt;/button>
+  &lt;option value="Red">
+    &lt;figure class="red">&lt;/figure>
+    Red
+  &lt;/option>
+  &lt;option value="Orange">
+    &lt;figure class="orange">&lt;/figure>
+    Orange
+  &lt;/option>
+  &lt;option value="Yellow">
+    &lt;figure class="yellow">&lt;/figure>
+    Yellow
+  &lt;/option>
+  ...
+&lt;/selectmenu></pre></code>
+                </div>
+                
+                <iframe src="https://codepen.io/una/debug/gOdJWNL" frameborder="0"></iframe>
+              </div>
+
                 <!-- 05. Style Queries -->
 
                 <div id="has-1" class="slide center top code-concept-intro">
@@ -630,12 +661,11 @@ Popover Stuff
                 <div class="slide center">
                   <h2><code>@property</code> declaration</h2>
                   <code>
-                    <pre style="width: 700px;">CSS.registerProperty({
-  name: '--colorPrimary',
-  syntax: '&lt;color&gt;',
-  initialValue: 'magenta',
-  inherits: false
-});</pre>
+                    <pre style="width: 700px;">@property --gradPoint {
+  syntax: '&lt;color>';
+  initial-value: magenta;
+  inherits: false;
+}</pre>
                   </code>
                 </div>
 
@@ -662,7 +692,7 @@ Popover Stuff
                   <div class="two-by">
                     <code style="font-size: 1.5rem"><pre>
 @property --gradPoint {
-  syntax: '<percentage>';
+  syntax: '&lt;percentage>';
   inherits: false;
   initial-value: 40%;
 }
@@ -671,7 +701,7 @@ Popover Stuff
   background: 
     linear-gradient(var(--color1) var(--gradPoint), 
                     var(--color2) calc(var(--gradPoint) + 20%));
-  transition: --gradPoint 0.5s, filter 0.8s;
+  transition: --gradPoint 0.5s;
 }
 
 .post:hover, .post:focus {
