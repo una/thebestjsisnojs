@@ -214,3 +214,11 @@ figure {
   left: 0;
   width: 230px;
 }
+
+.mini-phone {
+  border: 2px solid var(--blue);
+  width: 500px;
+  margin: 0 auto;
+  height: calc(100% - 2rem);
+  margin-top: 1rem;
+}

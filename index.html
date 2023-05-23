@@ -212,19 +212,19 @@
                 <!-- 04. Popover & Anchor -->
 
                 <div class="slide center">
-                  <iframe style="height: 80%" src="https://codepen.io/scottohara/debug/ZEMPwWR" frameborder="0"></iframe>
-                  <p style="padding: 0">Popover version by Scott O'Hara</p>
+                  <iframe style="height: 80%" src="https://codepen.io/web-dot-dev/debug/XWxPBdr" frameborder="0"></iframe>
+                  <p style="padding: 0">Popover + Anchor positioning</p>
                 </div>
 
 
                 <div id="popover-intro" class="slide center top code-concept-intro">
                   <a class="link-only" href="#popover" accesskey=4></a>
                   <h2><code>popover</code> attribute</h2>
-                  <p class="brief">Built-in accessibility semantics, keyboard behavior, and focus management</p>
+                  <p class="brief">Built-in accessibility semantics, keyboard behavior, tab focus management, and (optional) light-dismiss</p>
                   <ul class="fade-in-on-hover browser-support" tabindex="0">
                     <li>
                       <img src="img/chromium_256x256.png" alt="Chromium">
-                      <p>Soon ⚠️</p>
+                      <p>May 2023</p>
                     </li>
                     <li>
                       <img src="img/webkit_256x256.png" alt="Webkit">
@@ -253,8 +253,12 @@ Popover Stuff
               </div>                
 
                 <div class="slide">
-                  <iframe src="https://codepen.io/una/pen/jOeWzLd" frameborder="1"></iframe>
+                  <iframe class="mini-phone" src="https://codepen.io/una/debug/jOeWzLd" frameborder="0"></iframe>
                 </div>
+
+                <!-- <div class="slide">
+                  <iframe style="border: 2px solid var(--pink); height: 90%; margin-top: 2.5%" src="https://codepen.io/web-dot-dev/debug/jOeKzpb" frameborder="0"></iframe>
+                </div> -->
 
                 <div id="popover-intro" class="slide center top code-concept-intro">
                   <h2><code>anchor</code> positioning</h2>
@@ -280,7 +284,7 @@ Popover Stuff
               </div>
 
               <div class="slide">
-                <iframe src="https://codepen.io/una/pen/vYVLVVG" frameborder="1"></iframe>
+                <iframe class="mini-phone" src="https://codepen.io/una/debug/vYVLVVG" frameborder="1"></iframe>
               </div>
 
               <div class="slide center">
@@ -311,7 +315,7 @@ Popover Stuff
               </div>
 
               <div class="slide">
-                <iframe src="https://codepen.io/una/pen/vYVLVVG" frameborder="1"></iframe>
+                <iframe class="mini-phone" src="https://codepen.io/una/debug/vYVLVVG" frameborder="1"></iframe>
               </div>
               
               <div class="slide">
@@ -435,6 +439,7 @@ Popover Stuff
                     </div>
                 </div>
               </div>
+
               <div id="has-4" class="slide center">
                 <div class="codepen-link-container">
                   <label class="codepen-link-checkbox">
@@ -448,6 +453,7 @@ Popover Stuff
                 </div>
                 <!-- note: add another div -->
               </div>
+
               <div id="has-3" class="slide center top">
                     <h2>Quantity Queries</h2>
                     <p>Style based on the number of children</p>
@@ -488,6 +494,35 @@ Popover Stuff
                   </div>
                 </div>
               </div>
+
+              <div id="has-4" class="slide center">
+                <div class="two-by">
+                  <style class="display" style="font-size: 1.5rem; white-space: pre-wrap; width: 780px;" contenteditable>.error-msg {
+  display: none;
+}
+
+.login-form:has(:invalid) + .error-msg {
+  display: block;
+}
+</style>
+                <div class="error-msg-demo">
+                  <div class="login-form-container">
+                    <form class="login-form" action="">
+                      <div>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email">
+                      </div>
+                      <div>
+                        <label for="pw">Password</label>
+                        <input type="password" name="pw" id="pw">
+                      </div>
+                      <button type="submit">Log In</button>
+                    </form>
+                    <div class="error-msg">Please try again.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
                 
                 <!-- <div id="has-4" class="slide center">
                   <div class="codepen-link-container">
@@ -500,13 +535,47 @@ Popover Stuff
                   overflow: auto; width: 1200px; height: 700px; border: 2px solid">
                     <iframe src="https://cdpn.io/pen/debug/BaOXaxd" frameborder="0"></iframe>
                   </div>
-                </div>
-
-                <div id="has-5" class="slide center">
-                  <div style="width: 1200px; height: 700px;">
-                    <iframe src="https://codepen.io/una/debug/xxyGajm/0e064058f3589f4c3bb6225aa1104a3d" frameborder="0"></iframe>
-                  </div>
                 </div> -->
+
+                <div id="has-4" class="slide center">
+                  <div class="two-by">
+                    <style class="display" style="font-size: 1.5rem; white-space: pre-wrap; width: 780px;" contenteditable>.error-msg {
+  display: none;
+}
+
+.email:invalid:not(:focus-within) + .error-msg {
+  display: block;
+}
+  </style>
+                  <div class="error-msg-demo">
+                    <div class="login-form-container">
+                      <form class="login-form" action="">
+                        <div>
+                          <label for="email">Email</label>
+                          <input class="email" type="email" name="email" id="email">
+                          <div class="error-msg" style="
+                          margin-top: -0.75rem;
+                          margin-bottom: 1rem;
+                          font-size: 1.2rem;">Please check your email.</div>
+                        </div>
+                        <div>
+                          <label for="pw">Password</label>
+                          <input type="password" name="pw" id="pw">
+                        </div>
+                        <button type="submit">Log In</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="has-6" class="slide center">
+                <div style="width: 1200px; height: 700px;">
+                  <iframe src="https://codepen.io/una/debug/xxyGajm/0e064058f3589f4c3bb6225aa1104a3d" frameborder="0"></iframe>
+                </div>
+              </div> 
+
+                
 
                 <!-- 06. Container Queries -->
 
@@ -538,6 +607,7 @@ Popover Stuff
                 <div id="cq-2" class="slide">
                   <img src="img/cq-1.png" alt="">
                 </div>
+
                 <div id="cq-3" class="slide center">
                   <div class="codepen-link-container">
                     <label class="codepen-link-checkbox">
@@ -550,21 +620,31 @@ Popover Stuff
                     <iframe src="https://cdpn.io/pen/debug/WNgmxom" frameborder="0"></iframe>
                   </div>
                 </div>
+
+                <div id="cq-4" class="slide center">
+                  <h2>Micro-UI</h2>
+                  <div  style="resize: both;
+                  overflow: auto; width: 1000px; height: 600px; border: 2px solid">
+                    <iframe src="https://codepen.io/web-dot-dev/debug/qBJJQQa" frameborder="0"></iframe>
+                  </div>
+                </div>
+
+                <div id="cq-5" class="slide center">
+                  <div style="resize: both;
+                  overflow: auto; width: 300px; height: 300px; border: 2px solid">
+                    <iframe src="https://codepen.io/una/debug/ExdObra" frameborder="0"></iframe>
+                  </div>
+                </div>
+
+                <div class="slide center">
+                  @TODO - another demo here where the button is inside of a product card
+                </div>
+
                 <!-- <div id="cq-3" class="slide">
                   More with CQ, no more needing to resize observe for size, custom props
                 </div> -->
-                <div id="cq-4" class="slide center">
-                  <div class="codepen-link-container">
-                    <label class="codepen-link-checkbox">
-                      <input type="checkbox" name="codepen-link" />
-                    </label>
-                    <img src="img/qr-cq-2.png" alt="" class="codepen-link-qr">
-                  </div>
-                  <div  style="resize: both;
-                  overflow: auto; width: 300px; height: 300px; border: 2px solid">
-                    <iframe src="https://cdpn.io/pen/debug/WNEOjdB" frameborder="0"></iframe>
-                  </div>
-                </div>
+
+
 
                 <div id="clamp-6" class="slide top center">
                   <h2>Container query units</h2>
@@ -766,6 +846,10 @@ blockquote {
                 </div>
 
                 <div class="slide center">
+                  <iframe src="https://scroll-driven-animations.style/" frameborder="0"></iframe>
+                </div>
+
+                <div class="slide center">
                   <a class="link-only" href="#this-prezo" accesskey="0"></a>
                     <blockquote>🤫 This presentation is fully built with vanilla CSS & HTML*</blockquote>
                   <p>*with some iframes for demos due to laziness</p>
@@ -819,16 +903,21 @@ blockquote {
                 <blockquote>Don't underestimate CSS and vanilla HTML components</blockquote>
               </div>
 
+              <div class="slide center">
+                <h2 class="callout-link">web.dev</h2>
+                <h2 class="callout-link">developer.chrome.com</h2>
+              </div>
+
               <div id="slide-end" class="slide at-top">
                 <a class="link-only" href="#end" accesskey="="></a>
                 <h1>Thank you</h1>
                 <figure class="last-qr"><img src="img/collection_link.png" alt=""></figure>
+                <h2>Find me on the internet!</h2>
                 <ul class="links end-links">
                   <li>Twitter: <span>@una</span></li>
                   <li>Website: <span>una.im</span></li>
                   <li>Mastodon: <span>front-end.social/@una</span></li>
-                  <li>Articles: <span>web.dev</span></li>
-                  <li class="indent"><span>developer.chrome.com</span></li>
+                  <li>BlueSky: <span>una.im</span></li>
                 </ul>
               </div>
             </div>

@@ -42,9 +42,9 @@
   height: 100%;
 }
 
-/* ::-webkit-scrollbar {
-  display: none;
-} */
+::-webkit-scrollbar {
+  background: transparent;
+}
 
 .slider {
   width: var(--slide-width);

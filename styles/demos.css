@@ -85,3 +85,47 @@
   width: 500px;
   margin: 0 auto 4rem;
 }
+
+.login-form-container {
+  text-align: left;
+  max-width: 400px;
+  background: aliceblue;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.login-form label {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: -0.5rem;
+}
+
+.login-form input {
+  font-size: 1.5rem;
+  height: 2rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.login-form button {
+  width: 100%;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 0.5rem;
+  background: midnightblue;
+  color: white;
+  border: none;
+}
+
+.error-msg {
+  font-size: 1.5rem;
+  color: firebrick;
+  margin-top: 0.5rem;
+}
+
+.callout-link {
+  text-decoration: underline;
+  font-size: 4.5rem;
+}
