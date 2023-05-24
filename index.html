@@ -31,7 +31,7 @@
                           <li class="indented">Advanced selectors (<code>:has()</code>, <code>:not()</code>)</li>
                         <li>CSS-Driven Interactions</li>
                           <li class="indented">Scroll-driven animations (<code>view-timeline</code>)</li>
-                          <li class="indented">New components (<code>popover</code>, <code>anchor</code>)</li>
+                          <li class="indented">New component primitives (<code>popover</code>, <code>anchor</code>)</li>
                         <li>Native Architecture</li>
                         <li class="indented">Typed CSS (<code>@property</code>)</li>
                     </ul>
@@ -241,24 +241,123 @@
                 <h2>HTML</h2>
                 <code>
                   <pre>&lt;!-- Button -->
-&lt;button popovertarget="profile-settings-popover">
+&lt;button popovertarget="my-popover">
 Open Me
 &lt;/button>
 
 &lt;!-- Popover -->
-&lt;div id="profile-settings-popover" popover>
+&lt;div id="my-popover" popover>
 Popover Stuff
 &lt;/div></pre>
                 </code>
-              </div>                
+              </div>
+              
+              <div class="slide">
+                <div class="two-by">
+                  <code style="font-size: 1.5rem; width: 750px;margin: 2rem 0;"><pre>&lt;button popovertarget="my-popover">                  
+  Open Popover 
+&lt;/button>
+
+&lt;div id="my-popover" popover>
+  &lt;p>I am a popover with more information.&lt;p>
+&lt;/div></pre></code>
+                </div>
+                
+                <iframe src="https://codepen.io/web-dot-dev/debug/poxQPWP" frameborder="0"></iframe>
+              </div>
+
+              <div class="slide">
+                <div class="two-by">
+                  <code style="font-size: 1.5rem; width: 750px;margin: 2rem 0;"><pre>&lt;button popovertarget="my-popover">                  
+  Open Popover 
+&lt;/button>
+
+&lt;div id="my-popover" popover="manual">
+  &lt;button class="close-btn" 
+      popovertarget="my-popover" 
+      popovertargetaction="hide">
+    &lt;span aria-hidden=”true”>❌&lt;/span>
+    &lt;span class="sr-only">Close&lt;/span>
+  &lt;/button>
+  &lt;p>I am a popover with more information.&lt;p>
+&lt;/div></pre></code>
+                </div>
+                
+                <iframe src="https://codepen.io/web-dot-dev/debug/mdzpGwq" frameborder="0"></iframe>
+              </div>
 
                 <div class="slide">
-                  <iframe class="mini-phone" src="https://codepen.io/una/debug/jOeWzLd" frameborder="0"></iframe>
+                  <iframe src="https://codepen.io/una/debug/wvYEEWL" frameborder="0"></iframe>
+                </div>
+
+                <div id="popover-intro" class="slide center top code-concept-intro">
+                  <h2>Animating popovers</h2>
+                  <ul class="two-by" style="font-size: 40px">
+                    <li><code class="pink-bg">:popover-open</code></li>
+                    <li><code class="lavender-bg">@starting-style</code></li>
+                </ul>
+                  <ul class="fade-in-on-hover browser-support" tabindex="0">
+                    <li>
+                      <img src="img/chromium_256x256.png" alt="Chromium">
+                      <p>Soon  ⚠️</p>
+                    </li>
+                    <li>
+                      <img src="img/webkit_256x256.png" alt="Webkit">
+                      <p>❌</p>
+                    </li>
+                    <li>
+                      <img src="img/firefox_256x256.png" alt="Firefox">
+                      <p>❌</p>
+                    </li>
+                </ul>
+              </div>
+
+                <div class="slide">
+                  <iframe class="mini-phone" src="https://codepen.io/una/debug/rNqmOdm" frameborder="0"></iframe>
+                </div>
+                
+                <div class="slide">
+                  <div class="two-by">
+                    <code style="font-size: 1.5rem; width: 750px;margin: 2rem 0;"><pre>.settings-popover {
+  &:popover-open {
+    /*  0. BEFORE-OPEN  */
+    @starting-style {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    
+    /*  1. OPEN STATE   */
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+/*  2. EXIT STATE   */
+transform: translateY(-50px);
+opacity: 0;
+
+/*  List transitioning properties (w/ display) */
+transition: transform 0.5s, 
+            opacity 0.5s, 
+            display 0.5s;
+}
+                    </pre></code>
+                  <iframe class="mini-phone" src="https://codepen.io/una/debug/rNqmOdm" frameborder="0"></iframe>
+                  </div>
+                </div>
+
+                <div class="slide">
+                  <iframe class="mini-phone" src="https://codepen.io/una/debug/dygaZOL" frameborder="0"></iframe>
                 </div>
 
                 <!-- <div class="slide">
                   <iframe style="border: 2px solid var(--pink); height: 90%; margin-top: 2.5%" src="https://codepen.io/web-dot-dev/debug/jOeKzpb" frameborder="0"></iframe>
                 </div> -->
+
+                <div class="slide center">
+                  <iframe style="height: 80%" src="https://codepen.io/web-dot-dev/debug/XWxPBdr" frameborder="0"></iframe>
+                  <p style="padding: 0">Popover + Anchor positioning</p>
+                </div>
+
 
                 <div id="popover-intro" class="slide center top code-concept-intro">
                   <h2><code>anchor</code> positioning</h2>
@@ -283,64 +382,72 @@ Popover Stuff
                 </ul>
               </div>
 
-              <div class="slide">
-                <iframe class="mini-phone" src="https://codepen.io/una/debug/vYVLVVG" frameborder="1"></iframe>
-              </div>
-
               <div class="slide center">
                 <h2>HTML</h2>
                 <code>
                   <pre>&lt;!-- Add an id -->
-&lt;button popovertarget="profile-settings-popover"
-        id="profile-settings-btn">
+&lt;button popovertarget="my-popover" id="toggle-btn">
         Open Me
 &lt;/button>
 
 &lt;!-- Add an anchor -->
-&lt;div popover id="profile-settings-popover"
-       anchor="profile-settings-btn">
+&lt;div popover id="my-popover" anchor="toggle-btn">
         Popover Stuff
 &lt;/div></pre>
                 </code>
               </div> 
 
+              <div class="slide">
+                <iframe class="mini-phone" style="width: 600px" src="https://codepen.io/una/debug/vYVLVVG" frameborder="1"></iframe>
+              </div>
+
               <div class="slide center">
                 <h2>CSS</h2>
                 <code>
                   <pre>#profile-settings-popover {
-  bottom: calc(anchor(top) + 1rem);
+  bottom: calc(anchor(top) + var(--spacer));
   right: calc(anchor(right));
 }</pre>
                 </code>
               </div>
 
               <div class="slide">
-                <iframe class="mini-phone" src="https://codepen.io/una/debug/vYVLVVG" frameborder="1"></iframe>
+                <div class="two-by">
+                  <code style="font-size: 1.5rem; width: 650px;margin: 2rem 0;"><pre>[popover] {
+  bottom: calc(anchor(top) + 1rem);
+  right: calc(anchor(right));
+}</pre></code>
+                <iframe class="mini-phone" style="width: 600px" src="https://codepen.io/una/debug/vYVLVVG" frameborder="0"></iframe>
+                </div>
               </div>
+
+              <!-- <div class="slide">
+                <iframe class="mini-phone" style="width: 600px" src="https://codepen.io/una/debug/vYVLVVG" frameborder="1"></iframe>
+              </div> -->
               
               <div class="slide">
                 <div class="two-by">
 <style style="font-size: 1.25rem; white-space: pre-wrap; width: 100%; margin: 2rem 0;" contenteditable class="display">
-  :root {
-    --spacer: 0.5rem;
+:root {
+  --spacer: 0.5rem;
+}
+
+@position-fallback --top-then-bottom {
+  @try {
+    bottom: calc(anchor(top) + var(--spacer));
+    left: anchor(center);
   }
-  
-  @position-fallback --top-then-bottom {
-    @try {
-      bottom: calc(anchor(top) + var(--spacer));
-      left: anchor(center);
-    }
-  
-    @try {
-      top: calc(anchor(bottom) + var(--spacer));
-      left: anchor(center);
-    }
+
+  @try {
+    top: calc(anchor(bottom) + var(--spacer));
+    left: anchor(center);
   }
-  
-  #my-tooltip {
-    position-fallback: --top-then-bottom;
-    translate: -50% 0;
-  }</style>
+}
+
+#my-tooltip {
+  position-fallback: --top-then-bottom;
+  translate: -50% 0;
+}</style>
                 <div class="demo">
                   <div class="resize tooltip-demo">
                     <button id="question-mark" popovertarget="my-tooltip">
@@ -637,7 +744,10 @@ Popover Stuff
                 </div>
 
                 <div class="slide center">
-                  @TODO - another demo here where the button is inside of a product card
+                  <div style="resize: both;
+                  overflow: auto; width: 1200px; height: 700px; border: 2px solid">
+                    <iframe style="height: 98%" src="https://codepen.io/una/debug/zYdJvvw" frameborder="0"></iframe> 
+                  </div>
                 </div>
 
                 <!-- <div id="cq-3" class="slide">
@@ -657,7 +767,7 @@ Popover Stuff
   font-size: clamp(3rem, 8cqi, 5rem);
 }</style>
                   <div class="fluid-cq-container resize">
-                    <h2 class="fluid-cq">I am fluid typography</h2>
+                    <h2 class="fluid-cq">Powerpuff Girls Rule</h2>
                   </div>
                 </div>
 
@@ -687,9 +797,9 @@ Popover Stuff
                   </ul>
                 </div>
 
-                <div id="cq-4" class="slide">
+                <!-- <div id="cq-4" class="slide">
                   <img src="img/sq-1.png" alt="">
-                </div>
+                </div> -->
 
                 <div id="cq-5" class="slide center">
                     <div class="codepen-link-container">
@@ -741,7 +851,7 @@ Popover Stuff
                 <div class="slide center">
                   <h2><code>@property</code> declaration</h2>
                   <code>
-                    <pre style="width: 700px;">@property --gradPoint {
+                    <pre style="width: 700px;">@property --colorPrimary {
   syntax: '&lt;color>';
   initial-value: magenta;
   inherits: false;
@@ -847,6 +957,22 @@ blockquote {
 
                 <div class="slide center">
                   <iframe src="https://scroll-driven-animations.style/" frameborder="0"></iframe>
+                </div>
+
+                <div class="slide center">
+                  <iframe src="https://scroll-driven-animations.style/demos/cover-flow/css/" frameborder="0"></iframe>
+                </div>
+
+                <div class="slide center">
+                  <iframe src="https://scroll-driven-animations.style/demos/stacking-cards/css/" frameborder="0"></iframe>
+                </div>
+
+                <div class="slide center">
+                  <iframe src="https://scroll-driven-animations.style/demos/reverse-scroll/css/" frameborder="0"></iframe>
+                </div>
+
+                <div class="slide center">
+                  <h2 class="callout-link">scroll-driven-animations.style</h2>
                 </div>
 
                 <div class="slide center">
